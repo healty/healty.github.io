@@ -16,5 +16,4 @@ Lastly, the project provided for the implementation of an isomorphism checking m
 
 [1]: http://www.google.it
 [^CFI]: Jin-yi Cai, Martin Fürer, and Neil Immerman. An optimal lower bound on the number of variables for graph identifications. Combinatorica, 12(4):389–410, 1992
-[^planar]: S. Kiefer, I. Ponomarenko and P. Schweitzer, "The Weisfeiler-Leman dimension of planar graphs is at most 3," 2017 32nd Annual ACM/IEEE Symposium on Logic in Computer Science (LICS), Reykjavik, 2017, pp. 1-12.
-doi: 10.1109/LICS.2017.8005107
+[^planar]: S. Kiefer, I. Ponomarenko and P. Schweitzer, "The Weisfeiler-Leman dimension of planar graphs is at most 3," 2017 32nd Annual ACM/IEEE Symposium on Logic in Computer Science (LICS), Reykjavik, 2017, pp. 1-12. doi: 10.1109/LICS.2017.8005107
