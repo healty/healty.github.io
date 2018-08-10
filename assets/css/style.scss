@@ -25,3 +25,11 @@ div.footnotes{
     color: #606060;
     font-size: 11pt;
 }
+
+a{
+    color: inherit;
+    order-bottom: dotted 1px #aaa;
+}
+a:hover{
+    color: #0F79D0;
+}
