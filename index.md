@@ -12,7 +12,19 @@ As said above, scope of the project was implementing this family of algorithms, 
 
 Lastly, the project provided for the implementation of an isomorphism checking method which could use k-WL to distinguish graphs in a faster way.
 
+# Trac Tickets
 ---
-[1]: http://www.google.it
+
+SageMath development process is based around git and an issue tracking system called Trac. Specifically, every improvement, bug/bugfix or new functionality must be reported in a ticket on [https://trac.sagemath.org] with a detailed description, where it will be then discussed, possibly implemented/solved and then reviewed, to then be merged if the process went through successfully.
+
+This means that the work I've done has been divided in tickets on the Trac system, and so will be reported here with a similar structure.
+
+To access a particular piece of work described, and thus its in-depth description, discussion and code (which is stored in a separate branch for each ticket), it will suffice to click on the title of its subsection.
+
+In one particular instance, the ticket's original associated branch was changed due to a complete rework of the implementation required, which rendered obsolete the previous code. This means that two subsections of this document will reference the same ticket, but since the branch is still online, the subsection relative to the old implementation will link directly to said branch, skipping the ticket altogether. 
+
+# [\#25391 - Issues in compiling SageMath](https://trac.sagemath.org/ticket/25391)
+---
+[1]: https://www.iti.zcu.cz/wl2018/pdf/wl_paper_translation.pdf
 [^CFI]: Jin-yi Cai, Martin Fürer, and Neil Immerman. An optimal lower bound on the number of variables for graph identifications. Combinatorica, 12(4):389–410, 1992
 [^planar]: S. Kiefer, I. Ponomarenko and P. Schweitzer, "The Weisfeiler-Leman dimension of planar graphs is at most 3," 2017 32nd Annual ACM/IEEE Symposium on Logic in Computer Science (LICS), Reykjavik, 2017, pp. 1-12. doi: 10.1109/LICS.2017.8005107
