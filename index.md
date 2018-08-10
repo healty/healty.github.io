@@ -10,4 +10,4 @@ Subsequently, an implementation would be made of the Weisfeiler-Lehman (WL) meth
 While this is called the Weisfeiler-Lehman algorithm, it's more correct to say family of algorithms, since for any positive *k* a version of WL can be defined which recognizes strictly more graphs than any other lower order WL[^1]
 
 
-[^1] Jin-yi Cai, Martin Fürer, and Neil Immerman. An optimal lower bound on the number of variables for graph identifications. Combinatorica, 12(4):389–410, 1992
+[^1]: Jin-yi Cai, Martin Fürer, and Neil Immerman. An optimal lower bound on the number of variables for graph identifications. Combinatorica, 12(4):389–410, 1992
