@@ -1,6 +1,3 @@
-<head>
-    <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
-</head>
 # Overview
 ---
 The project, spanned over a period of slightly over 3 months, consisted in improving the way in SageMath checks for graph isomorphism.  
