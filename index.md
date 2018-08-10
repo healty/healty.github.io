@@ -12,13 +12,24 @@ Lastly, the project provided for the implementation of an isomorphism checking m
 
 SageMath development process is based around git and an issue tracking system called Trac. Specifically, every improvement, bug/bugfix or new functionality must be reported in a ticket on (https://trac.sagemath.org) with a detailed description, where it will be then discussed, possibly implemented/solved and then reviewed, to then be merged if the process went through successfully.
 
-This means that the work I've done has been divided in tickets on the Trac system, and so will be reported here with a similar structure.
+This means that the work I've done has been divided in tickets on the Trac system, and so will be reported here with a similar structure and organized in chronological order.
 
 To access a particular piece of work described, and thus its in-depth description, discussion and code (which is stored in a separate branch for each ticket), it will suffice to click on the title of its subsection.
 
 In one particular instance, the ticket's original associated branch was changed due to a complete rework of the implementation required, which rendered obsolete the previous code. This means that two subsections of this document will reference the same ticket, but since the branch is still online, the subsection relative to the old implementation will link directly to said branch, skipping the ticket altogether. 
 
 # [\#25391 - Issues in compiling SageMath](https://trac.sagemath.org/ticket/25391)
+The subject of the first ticket I've worked on, and also the first difficulty I encountered during my project, was getting SageMath to run at all on my system.  
+I started working on a PC running Fedora 28 64bit with gcc 8.1, a fairly updated setup, and this caused a few issues in compiling SageMath's source code.  
+In particular, as can be seen in the ticket's description, I had troubles with python3, python2 and linbox packages.  
+Now, in all honesty, I could have worked around the issue completely by switching to an older version of the distro, or to another distro altogether, but I thought this could be a good first contribution to SageMath, and the perfect way to gain familiarity with the Trac system and Sage's internal structure and workings before I started working on code that was more relevant to my project.
+
+The actual fixes to the issues I encountered were fairly simple, but debugging the system required a lot of effort, and all the help I could get from my mentor, Dmitrii Pasechnik.  
+While at first, after a couple of weeks of work, I was able to produce patches to be included in Sage that could solve the problems listed in the ticket, after some time the upstream maintainers of the packages produced updated versions with fixes included; the ticket, even if fairly successful in providing a solution to the issue, was thus closed because not needed once the packages inside Sage had been updated too.
+
+Still, I consider this ticket very important in my journey, since it really helped me understand how the library I was working on was structured, which parts were where and what to modify and how. In a sense, it served as kind of a workshop before starting work on the real thing.
+
+
 ---
 [1]: https://www.iti.zcu.cz/wl2018/pdf/wl_paper_translation.pdf
 [^CFI]: Jin-yi Cai, Martin Fürer, and Neil Immerman. An optimal lower bound on the number of variables for graph identifications. Combinatorica, 12(4):389–410, 1992
