@@ -1,7 +1,8 @@
 <head>
     <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
 </head>
-# Google Summer Of Code 2018 Final Report
+# Google Summer Of Code 2018 - Final Report
+___
 ## Overview
 The project, spanned over a period of slightly over 3 months, consisted in improving the way in SageMath checks for graph isomorphism.  
 The plan was first implementing an interface to one of the fastest, if not the fastest, automorphism and isomorphism checking open-source library, Nauty, an interface that could turn useful both as a standalone isomorphism checker and as a benchmarking tool.  
@@ -13,7 +14,7 @@ As said above, scope of the project was implementing this family of algorithms, 
 Lastly, the project provided for the implementation of an isomorphism checking method which could use k-WL to distinguish graphs in a faster way.
 
 
-
+[1]: http://www.google.it
 [^CFI]: Jin-yi Cai, Martin Fürer, and Neil Immerman. An optimal lower bound on the number of variables for graph identifications. Combinatorica, 12(4):389–410, 1992
-[^planar]: S. Kiefer, I. Ponomarenko and P. Schweitzer, "The Weisfeiler-Leman dimension of planar graphs is at most 3," 2017 32nd Annual ACM/IEEE Symposium on Logic in Computer Science (LICS), Reykjavik, 2017, pp. 1-12.  
+[^planar]: S. Kiefer, I. Ponomarenko and P. Schweitzer, "The Weisfeiler-Leman dimension of planar graphs is at most 3," 2017 32nd Annual ACM/IEEE Symposium on Logic in Computer Science (LICS), Reykjavik, 2017, pp. 1-12.
 doi: 10.1109/LICS.2017.8005107
