@@ -87,6 +87,7 @@ Specifically, I implemented the following:
 
 * Cai-Furer-Immerman Graphs
 : Do I have to say it?
+
 ---
 [1]: https://www.iti.zcu.cz/wl2018/pdf/wl_paper_translation.pdf
 [^CFI]: Jin-yi Cai, Martin Fürer, and Neil Immerman. An optimal lower bound on the number of variables for graph identifications. Combinatorica, 12(4):389–410, 1992
