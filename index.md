@@ -55,7 +55,7 @@ As anticipated, this subsection is about my first take at a k-WL implementation,
 
 This implementation was based off a book draft[^first] describing the nominally best known implementation (in terms of time, probably) of k-WL.  
 
-The algorithm I devised to put that description into code was basically generate and memorise all the tuples in 
+The algorithm I devised to put that description into code was basically generate and memorise all the tuples in \\[V^n\\]
 
 ---
 [1]: https://www.iti.zcu.cz/wl2018/pdf/wl_paper_translation.pdf
