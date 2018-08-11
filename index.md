@@ -29,6 +29,7 @@ While at first, after a couple of weeks of work, I was able to produce patches t
 
 Still, I consider this ticket very important in my journey, since it really helped me understand how the library I was working on was structured, which parts were where and what to modify and how. In a sense, it served as kind of a workshop before starting work on the real thing.
 
+# [\#25506 - Nauty interface for isomorphism checking and automorphism group computing](https://trac.sagemath.org/ticket/25506)
 
 ---
 [1]: https://www.iti.zcu.cz/wl2018/pdf/wl_paper_translation.pdf
