@@ -1,3 +1,6 @@
+---
+mathjax: true
+---
 # Overview
 The project, spanned over a period of slightly over 3 months, consisted in improving the way in SageMath checks for graph isomorphism.  
 The plan was first implementing an interface to one of the fastest, if not the fastest, automorphism and isomorphism checking open-source library, Nauty, an interface that could turn useful both as a standalone isomorphism checker and as a benchmarking tool.  
@@ -47,8 +50,16 @@ The only way I could find around this issue was described in section 14 of nauty
 
 The main difficulties of this ticket (which consisted in my first real work on the project) were understanding how to correctly modify the source code so that it could interact with Sage, understanding the input and output conventions used by Sage's graph methods, but overall the most difficult part was wrapping my head around more advanced concepts about automorphism groups and isomorphism checking, a feat that required a large amount of studying more than actual programming but that would have proven useful in my quest to implement k-WL.
 
+# [\#25802 - Efficient k-WL implementation](https://git.sagemath.org/sage.git/log/?h=u/Vaush/weisfeiler_lehman_first_implementation)
+As anticipated, this subsection is about my first take at a k-WL implementation, thus, while the ticket number refers to a k-WL implementation, it refers to the second one, but the link above takes the user to the first implementation's branch.
+
+This implementation was based off a book draft[^first] describing the nominally best known implementation (in terms of time, probably) of k-WL.  
+
+The algorithm I devised to put that description into code was basically generate and memorise all the tuples in 
+
 ---
 [1]: https://www.iti.zcu.cz/wl2018/pdf/wl_paper_translation.pdf
 [^CFI]: Jin-yi Cai, Martin Fürer, and Neil Immerman. An optimal lower bound on the number of variables for graph identifications. Combinatorica, 12(4):389–410, 1992
 [^planar]: S. Kiefer, I. Ponomarenko and P. Schweitzer, "The Weisfeiler-Leman dimension of planar graphs is at most 3," 2017 32nd Annual ACM/IEEE Symposium on Logic in Computer Science (LICS), Reykjavik, 2017, pp. 1-12. doi: 10.1109/LICS.2017.8005107
 [^nauty]: McKay, B.D. and Piperno, A., Practical Graph Isomorphism, II, Journal of Symbolic Computation, 60 (2014), pp. 94-112, http://dx.doi.org/10.1016/j.jsc.2013.09.003
+[^first]: https://www.lii.rwth-aachen.de/images/Mitarbeiter/pub/grohe/cr.pdf
