@@ -76,16 +76,16 @@ While testing my first implementation and discussing it with my mentor, and also
 
 Specifically, I implemented the following:
 
-Egawa Graphs
+* Egawa Graphs
 : A type of graph
 
-Hamming Graphs
+* Hamming Graphs
 : Another type of graph
 
-Furer Gadgets
+* Furer Gadgets
 : Yet another type of graph
 
-Cai-Furer-Immerman Graphs
+* Cai-Furer-Immerman Graphs
 : Do I have to say it?
 ---
 [1]: https://www.iti.zcu.cz/wl2018/pdf/wl_paper_translation.pdf
