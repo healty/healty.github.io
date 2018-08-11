@@ -69,8 +69,24 @@ The idea was then to first order the whole set of sets based on each set's first
 
 This algorithm's time performance was very good given the amount of work it needed to do, but after discussing it with my mentor, it became exceedingly clear that the algorithm could be implmeneted in a different way, that was both faster and less memory hungry. Still, this implementation being very straight-forward and linear, it proved a perfect correctness checking tool for my second implementation later on, before I could develop a more precise way of testing.
 
-There was not any major difficulty during this part of the project, but a long series of minor distressful inconvenciences: in no particular order, implementing the particular sorting method described above and getting it to work reliably given its convoluted essence was no easy task, but also understanding how k-WL should work from a summary description in a paper through trial and error proved quite difficult; all in all, this part required a lot of time to bring to completion, but was very useful in understanding enough of k-WL to be able to implement the second version of the algorithm later on.
+There was no major difficulty during this part of the project, but a long series of minor distressful inconvenciences: in no particular order, implementing the particular sorting method described above and getting it to work reliably given its convoluted essence was no easy task, but also understanding how k-WL should work from a summary description in a paper through trial and error proved quite difficult; all in all, this part required a lot of time to bring to completion, but was very useful in understanding enough of k-WL to be able to implement the second version of the algorithm later on.
 
+# [\#25891 - Implementing generators for Hamming graphs, Egawa graphs and Cai-Furer-Immerman graphs](https://trac.sagemath.org/ticket/25891)
+While testing my first implementation and discussing it with my mentor, and also during the time we discussed about the new implementation and how it should work, to avoid staying idle I decided to implement a few generators in SageMath for graphs that have interesting properties related to k-WL, which would make them useful for eventual tests or benchmarks.
+
+Specifically, I implemented the following:
+
+Egawa Graphs
+: A type of graph
+
+Hamming Graphs
+: Another type of graph
+
+Furer Gadgets
+: Yet another type of graph
+
+Cai-Furer-Immerman Graphs
+: Do I have to say it?
 ---
 [1]: https://www.iti.zcu.cz/wl2018/pdf/wl_paper_translation.pdf
 [^CFI]: Jin-yi Cai, Martin Fürer, and Neil Immerman. An optimal lower bound on the number of variables for graph identifications. Combinatorica, 12(4):389–410, 1992
