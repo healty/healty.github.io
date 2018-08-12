@@ -129,6 +129,22 @@ In the end, it was time to improve the improvement, that is reduce the amount of
 
 Other small improvements (which do not modify the asymptotic complexity) include making good use of the processor's cache, reusing data structures and memory (such as the support matrix mentioned right above) and only resetting values when needed (i.e. again in the case of the matrix above, there's no need to zero out the entire matrix, just the at most \\((k+1)^2\\) entries that were modified in the last run of the canonical form computing function).
 
+## Correctness checking test
+A quick mention is needed for the correctness checking test that I added to k-WL's code, a separate method that, albeit slowly, computes the orbitals (or orbits) of a given graph \\(G\\) using Sage's already existing methods and checks them against k-WL's result, returning either a *Correct*, *Wrong* or *Refinable* judgement, the last one meaning that k-WL's result was a union of the correct orbits and a higher value of \\(k\\) might be able to return the correct orbits.
+
+The way the method accomplishes this is actually very simple:
+* It first computes the orbits (or orbitals) of \\(G\\), in the first case with a simple call to ```G.automorphism_group(orbits=True, return_group=False)```, in the second case by going through each edge and comparing them against a list of already found orbitals representers, if an edge is found to be in the same orbital as a representer, it's accordingly added to it. To see if two edges \\((x,y)\\) and \\((u,v)\\) belong to the same orbital the method, using the theory described in P. Cameron's book[^cameron], first checks if there is an automorphism \\(g\\) s.t. \\(g(x) = u\\) and then if \\(g(y)\\) is in the same orbit as \\(v\\) w.r.t. the point stabilizer of \\(G\\) on \\(u\\); if both conditions hold, then the edges are in the same orbital w.r.t. \\(G\\), they are not otherwise.
+* After computing the actual orbitals, and having checked that k-WL's result is actually a partition, if k-WL's result is exactly equal to the orbits, then the output will be *Correct*, otherwise the method goes through the orbitals of \\(G\\) and for each checks if there is a color class that is its superset; if all of the orbitals can be assigned to a superset, then the result is a union of orbitals and the output will be *Refinable*, otherwise it will be *Wrong*.
+
+# Current status and future work
+The tickets' current status in the Trac system is that they are all ready to be officially reviewed (except for the first one that, as said, has been closed because not needed anymore); in particular, [#25506](https://trac.sagemath.org/ticket/25506) is basically ready to be merged.  
+Each ticket's code is complete with documentation and tests, and has been unofficially reviewed by both my mentor, Dmitrii Pasechnik, whom I want to particularly thank, and by David Coudert, whom I thank for the time he spent helping me even without having any obbligation to.
+
+Future work (and such a future could very well be near, since I intend to continue working on the project after the end of GSOC 2018) includes
+* Implementing k-WL into the isomorphism checking and automorphism computing process used in Sage, benchmark it and see if there's any utility in using it as a default option, or maybe leaving it for special cases only.
+* Improving the current k-WL efficiency, both via improving the way in which the canonical form of a subgraph is found and by implementing specialised versions for \\(k = 1\\) and \\(k = 2\\), particular cases that have some peculiar characteristics which can be used to improve 1-WL performance greatly and 2-WL performance by a quite large margin
+* Adding more tests and examples to the tickets' code, as there's always a need for more testing
+
 ---
 [1]: https://www.iti.zcu.cz/wl2018/pdf/wl_paper_translation.pdf
 [^CFI]: Jin-yi Cai, Martin Fürer, and Neil Immerman. An optimal lower bound on the number of variables for graph identifications. Combinatorica, 12(4):389–410, 1992
@@ -136,3 +152,4 @@ Other small improvements (which do not modify the asymptotic complexity) include
 [^nauty]: McKay, B.D. and Piperno, A., Practical Graph Isomorphism, II, Journal of Symbolic Computation, 60 (2014), pp. 94-112, http://dx.doi.org/10.1016/j.jsc.2013.09.003
 [^first]: https://www.lii.rwth-aachen.de/images/Mitarbeiter/pub/grohe/cr.pdf
 [^egawa]: Yoshimi Egawa, Characterization of H(n, q) by the parameters, Journal of Combinatorial Theory, Series A, Volume 31, Issue 2, 1981, Pages 108-125, ISSN 0097-3165, https://doi.org/10.1016/0097-3165(81)90007-8
+[^cameron]: Cameron, P. (1999). Permutation Groups (London Mathematical Society Student Texts). Cambridge: Cambridge University Press. doi:10.1017/CBO9780511623677
