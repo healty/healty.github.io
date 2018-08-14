@@ -1,4 +1,3 @@
 title: Google Summer Of Code 2018 - Final Report
-description: Efficient implementation of a general Weisfeiler-Lehman algorithm
-and graph isomorphism in Sagemath
+description: Efficient implementation of a general Weisfeiler-Lehman algorithm and graph isomorphism in Sagemath
 theme: jekyll-theme-slate
