@@ -2,7 +2,7 @@
 mathjax: true
 ---
 # Overview
-The project, spanning over a period of slightly over 3 months, consisted in improving the way SageMath checks for graph isomorphism.  
+The project, spanning over a period of slightly over 3 months, consisted in improving the way [SageMath][sagemath] checks for graph isomorphism.  
 The plan was first implementing an interface to one of the fastest, if not the fastest, automorphism and isomorphism checking open-source library, Nauty, an interface that could turn useful both as a standalone isomorphism checker and as a benchmarking tool.  
 Subsequently, an implementation would be made of the Weisfeiler-Lehman (WL) method: such method, described in [this 1968 paper][1], computes the coherent closure of an arbitrary (di)graph in polynomial time; in simpler terms, the method starts with an initial partition of the vertices (resp. edges) of a graph G and refines this partition through several passes, until the partition resulting by a refinement round is equal to the one the round started with; this resulting, final partition, has the property of being equal to or refined by the orbits (resp. orbitals) of the original graph's automorphism group, and we say WL recognizes a graph if the resulting partition is equal to its orbits (resp. orbitals).  
 While this is called the Weisfeiler-Lehman algorithm, it would be more correct to say family of algorithms, since for any positive *k* a version of WL can be defined which recognizes strictly more graphs than any other, lower order, WL[^CFI].
@@ -13,13 +13,13 @@ Lastly, the project provided for the implementation of an isomorphism checking m
 
 # Trac Tickets
 
-SageMath development process is based around git and an issue tracking system called Trac. Specifically, every improvement, bug/bugfix or new functionality must be reported in a ticket on (https://trac.sagemath.org) with a detailed description, where it will be then discussed, possibly implemented/solved and then reviewed, to then be merged if the process went through successfully.
+SageMath development process is based around git and an issue tracking system called Trac. Specifically, every improvement, bug/bugfix or new functionality must be reported in a ticket on [https://trac.sagemath.org](https://trac.sagemath.org) with a detailed description, where it will be then discussed, possibly implemented/solved and then reviewed, to then be merged if the process went through successfully.
 
 This means that the work I've done has been divided in tickets on the Trac system, and so will be reported here with a similar structure and organized in chronological order.
 
 To access a particular piece of work described, and thus its in-depth description, discussion and code (which is stored in a separate branch for each ticket), it will suffice to click on the title of its subsection.
 
-In one particular instance, the ticket's original associated branch was changed due to a complete rework of the implementation required, which rendered obsolete the previous code. This means that two subsections of this document will reference the same ticket, but since the branch is still online, the subsection relative to the old implementation will link directly to said branch, skipping the ticket altogether. 
+In one particular instance, the ticket's original associated branch was changed due to a complete rework of the implementation required, which rendered obsolete the previous code. This means that two subsections of this document will reference the same ticket, but since its branch is still online, the subsection relative to the old implementation will link directly to said branch, skipping the ticket altogether. 
 
 # [\#25391 - Issues in compiling SageMath](https://trac.sagemath.org/ticket/25391)
 The subject of the first ticket I've worked on, and also the first difficulty I encountered during my project, was getting SageMath to run at all on my system.  
@@ -34,7 +34,7 @@ Still, I consider this ticket very important in my journey, since it really help
 
 # [\#25506 - Nauty interface for isomorphism checking and automorphism group computing](https://trac.sagemath.org/ticket/25506)
 My second ticket consisted in implementing an interface between Sage and [*nauty*](http://pallini.di.uniroma1.it/)[^nauty], a very fast program for computing automorphism groups and canonical labels (and thus for checking for isomorphisms between graphs).  
-The reason why I chose this as my second ticket, instead of implementing k-WL first and then focus on interfaces, is a matter of priorities: I wanted to give something to SageMath's project, and since implementing k-WL in an efficient and useful manner was a challenge, the only sure way of doing so was allowing SageMath's ```automorphism_group``` and ```is_isomorphic``` methods to run faster, using a library that was included in Sage, but never actually incorporated, that is, *nauty*.
+The reason why I chose this as my second ticket, instead of implementing k-WL first and then focus on interfaces, is a matter of priorities: I wanted to give something to SageMath's project, and since implementing k-WL in an efficient and useful manner was a challenge, the only sure way of doing so was allowing SageMath's [```automorphism_group```](http://doc.sagemath.org/html/en/reference/graphs/sage/graphs/generic_graph.html#sage.graphs.generic_graph.GenericGraph.automorphism_group) and [```is_isomorphic```](http://doc.sagemath.org/html/en/reference/graphs/sage/graphs/generic_graph.html#sage.graphs.generic_graph.GenericGraph.is_isomorphic) methods to run faster, using a library that was included in Sage, but never actually incorporated, that is, *nauty*.
 
 My work was heavily based on [*pynauty*](https://web.cs.dal.ca/~peter/software/pynauty/html/), a GPLv3 python module that allows python code to interface with nauty to use it for computing automorphism groups and comparing for isomorphism.  
 While keeping the same name to give credit, the package I developed for Sage applies a large number of patches to pynauty's source, basically keeping only the C helper functions used to call on nauty.  
@@ -149,6 +149,7 @@ Future work (and such a future could very well be near, since I intend to contin
 
 ---
 [1]: https://www.iti.zcu.cz/wl2018/pdf/wl_paper_translation.pdf
+[sagemath]: http://www.sagemath.org/
 [^CFI]: Jin-yi Cai, Martin Fürer, and Neil Immerman. An optimal lower bound on the number of variables for graph identifications. Combinatorica, 12(4):389–410, 1992
 [^planar]: S. Kiefer, I. Ponomarenko and P. Schweitzer, "The Weisfeiler-Leman dimension of planar graphs is at most 3," 2017 32nd Annual ACM/IEEE Symposium on Logic in Computer Science (LICS), Reykjavik, 2017, pp. 1-12. doi: 10.1109/LICS.2017.8005107
 [^nauty]: McKay, B.D. and Piperno, A., Practical Graph Isomorphism, II, Journal of Symbolic Computation, 60 (2014), pp. 94-112, http://dx.doi.org/10.1016/j.jsc.2013.09.003
