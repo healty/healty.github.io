@@ -1,3 +1,4 @@
 title: Google Summer Of Code 2018 - Final Report
-description: Checking graph isomorphism using the Weisfeiler-Lehman algorithm
+description: Efficient implementation of a general Weisfeiler-Lehman algorithm
+and graph isomorphism in Sagemath
 theme: jekyll-theme-slate
